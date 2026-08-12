@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  color: blanchedalmond;
+  background-color: #070000;
+  margin: 0;
+  padding: 0;
+}
+
+.hepta, body {
+  font-family: "Hepta Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  padding-top: 50px;
+  padding: 50px;
+  max-width: 70%;
+  margin: 0 auto;
+  background-color: #180500;
+  border: 1px solid #472a23;
+  min-height: calc(100vh - 105px);
+}
+
+.menuBar {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #ffeecc;
+  border-left: none;
+  border-right: none;
+}
+
+.menuContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.itemContainerContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.itemContainerContainer .itemContainer:first-child {
+  flex: 2;
+}
+
+.itemContainerContainer .itemContainer:last-child {
+  flex: 1;
+}
+
+.item {
+  color: #ffeecc;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  border: 1px solid #ffeecc;
+  width:100%;
+}
+
+.verticalSpacer {
+ width: 25px;
+}
+
+.article_content {
+  width:100%;
+  padding-top: 50px;
+}
+
+a {
+  color: #ffeecc;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  font-size: 4em;
+  margin: 0;
+}
+
+p a {
+    color: #f7b229;
+}
+
+pre {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.2em;
+  color: #ffeecc;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

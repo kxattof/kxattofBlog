@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kxattof | Contact Form</title>
+    <link rel="icon" type="image/x-icon" href="/Assets\Kxattof_Filled.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/contact.css" />
+  </head>
+  <body>
+    <div class="popup-container" id="popup-container">
+      <div id="popup" class="popup" onclick="closePopup()">
+        <div class="popup-content">
+          <h2>Form Submission</h2>
+          <p id="popup-message"></p>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <header>
+        <h1 class="hepta"><a href="/">Kxattof</a></h1>
+        <p class="montserrat">Contact Form</p>
+      </header>
+      <div class="menuBar">
+        <div class="menuContainer">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+      <div id="article-content" class="article_content">
+        <h2>Contact Form</h2>
+        <p>Fill out this form to get in touch with us:</p>
+        <br />
+        <form>
+          <p class="question-note">Optional:</p>
+          <label for="name">Name or Alias:</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            maxlength="50"
+          /><br /><br />
+
+          <p class="question-note">Optional:</p>
+          <label for="email">Email:</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            maxlength="254"
+          /><br /><br />
+
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message" rows="4" required></textarea
+          ><br /><br />
+
+          <input
+            type="submit"
+            value="Submit"
+            onclick="validateForm();"
+          />
+        </form>
+      </div>
+    </div>
+    <script src="/contact-form.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+.question-note {
+  font-size: 0.9em;
+  color: #998362;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #472a23;
+  border-radius: 4px;
+  background-color: #070000;
+  color: #ffeecc;
+  field-sizing: content;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  background-color: #180500;
+  color: #ffeecc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-container {
+  top: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  overflow: auto;
+  transition: 1s ease-in-out;
+}
+
+.popup {
+  display: block;
+  background-color: #070000;
+  margin: 2% auto;
+  padding: 20px;
+  border: 1px solid #ffeecc;
+  width: 80%;
+  text-align: center;
+  transition: 1s ease-in-out;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #070000;
+  color: #ffeecc;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid #ffeecc;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}

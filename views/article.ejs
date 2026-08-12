@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <link rel="icon" type="image/x-icon" href="/Assets/Kxattof_Filled.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/article.css" />
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <h1 class="hepta"><a href="/">Kxattof</a></h1>
+        <p class="montserrat">Article ID #<%= articleId %></p>
+      </header>
+      <div class="menuBar">
+        <div class="menuContainer">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+      <div id="article-content" class="article_content">
+        <h2><%= articleTitle %></h2>
+        <%- articleContent %>
+      </div>
+    </div>
+    <script src="/article.js"></script>
+  </body>
+</html>
