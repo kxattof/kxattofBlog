@@ -1,6 +1,6 @@
 Content License
 
-Copyright © [YEAR] [AUTHOR NAME]. All rights reserved.
+Copyright © 2026 Kxattof. All rights reserved.
 
 - Scope
 
