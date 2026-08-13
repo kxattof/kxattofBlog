@@ -1,0 +1,3 @@
+At Kxattof, I'm a strong believer in the protection of privacy. For that reason, we do not collect, share, or sell any of your data. We keep information that you give us directly through emails, contact forms, etc. In our records, we keep record of names/nicknames, emails, and the content of what you wrote to us. We never share any of that information with anybody unless given direct consent. If you want us to erase any of this information from our records, please reach out to us and we'd be more than happy to!
+
+Tl;dr: We keep track of who contacts us and why, that's it.

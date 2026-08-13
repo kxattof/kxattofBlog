@@ -15,6 +15,9 @@ app.use(express.static(path.join(__dirname, "public"), { extensions: ["html", "h
 const imageContainerHtml =
   "<div class='article-image-box' data-layout='{{ALIGNMENT}}' style='flex-direction: {{ALIGNMENT}};'> <div class='article-image-container'> <img src='{{IMAGE_SRC}}' alt='{{CAPTION}}' class='article-image'/> </div> <div class='article-image-caption-container'> <p class='article-image-caption'>{{CAPTION}}</p> </div> </div>";
 
+  const linkContainerHtml =
+  "<a src='{{LINK_SOURCE}}' class='article-link'>{{LINK_TEXT}}</a>";
+
 function htmlThings(value) {
   return String(value).replace(
     /<img>(.*?);;\s*(.*?);;\s*(.*?)<\/img>/g,
@@ -23,6 +26,13 @@ function htmlThings(value) {
         .replace("{{IMAGE_SRC}}", src.trim())
         .replaceAll("{{CAPTION}}", caption.trim())
         .replaceAll("{{ALIGNMENT}}", alignment.trim());
+    },
+  ).replace(
+    /<a>(.*?);;\s*(.*?)<\/a>/g,
+    (match, src, text, alignment) => {
+      return imageContainerHtml
+        .replace("{{LINK_SRC}}", src.trim())
+        .replaceAll("{{LINK_TEXT}}", text.trim())
     },
   );
 }
@@ -133,6 +143,37 @@ app.get("/about", async (req, res) => {
 
     return res.render("about", {
       articleContent: (content),
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send("Something went wrong");
+  }
+});
+
+app.get("/licenses", async (req, res) => {
+  try {
+    const codeLicense = path.join(__dirname, "LICENSE.md");
+    const codeLicenseContent = await fs.readFile(codeLicense, "utf-8");
+    const contentLicense = path.join(__dirname, "CONTENT_LICENSE.md");
+    const contentLicenseContent = await fs.readFile(contentLicense, "utf-8");
+
+    return res.render("licenses", {
+      codeLicense: (codeLicenseContent),
+      contentLicense: (contentLicenseContent),
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send("Something went wrong");
+  }
+});
+
+app.get("/privacy", async (req, res) => {
+  try {
+    const privacyPolicy = path.join(__dirname, "privacyPolicy.md");
+    const privacyPolicyContent = await fs.readFile(privacyPolicy, "utf-8");
+
+    return res.render("privacy", {
+      privacyPolicy: (privacyPolicyContent),
     });
   } catch (err) {
     console.error(err);

@@ -26,6 +26,6 @@ This content is provided "as is," without warranty of any kind, express or impli
 
 The author may revise this license at any time. The version in effect at the time you accessed the content governs that access.
 
-Permission Requests
+- Permission Requests
 
-For licensing or permission requests, contact: kxattof@gmail.com
+For licensing or permission requests, contact kxattof@gmail.com, or see our other contact options on our contact page.

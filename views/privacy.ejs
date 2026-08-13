@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= pageTitle %></title>
-    <link rel="icon" type="image/x-icon" href="/Assets/Kxattof_Filled.png" />
+    <title>Kxattof | Contact</title>
+    <link rel="icon" type="image/x-icon" href="/Assets\Kxattof_Filled.png" />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/article.css" />
+    <link rel="stylesheet" href="/licenses.css" />
   </head>
   <body>
     <div class="content">
       <header>
         <h1 class="hepta"><a href="/">Kxattof</a></h1>
-        <p class="montserrat">Article ID #<%= articleId %></p>
+        <p class="montserrat">Privacy Policy</p>
       </header>
       <div class="menuBar">
         <div class="menuContainer">
@@ -24,10 +24,10 @@
         </div>
       </div>
       <div id="article-content" class="article_content">
-        <h2><%= articleTitle %></h2>
-        <%- articleContent %>
+        <h2>Privacy Policy</h2>
+        <p>How Kxattof uses your data.</p>
+        <pre> <%= privacyPolicy %></pre>
       </div>
     </div>
-    <script src="/article.js"></script>
   </body>
 </html>
