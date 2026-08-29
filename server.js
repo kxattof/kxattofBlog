@@ -16,7 +16,7 @@ const imageContainerHtml =
   "<div class='article-image-box' data-layout='{{ALIGNMENT}}' style='flex-direction: {{ALIGNMENT}};'> <div class='article-image-container'> <img src='{{IMAGE_SRC}}' alt='{{CAPTION}}' class='article-image'/> </div> <div class='article-image-caption-container'> <p class='article-image-caption'>{{CAPTION}}</p> </div> </div>";
 
   const linkContainerHtml =
-  "<a src='{{LINK_SOURCE}}' class='article-link'>{{LINK_TEXT}}</a>";
+  "<a href='{{LINK_SOURCE}}' class='article-link'>{{LINK_TEXT}}</a>";
 
 function htmlThings(value) {
   return String(value).replace(
@@ -30,8 +30,8 @@ function htmlThings(value) {
   ).replace(
     /<a>(.*?);;\s*(.*?)<\/a>/g,
     (match, src, text, alignment) => {
-      return imageContainerHtml
-        .replace("{{LINK_SRC}}", src.trim())
+      return linkContainerHtml
+        .replace("{{LINK_SOURCE}}", src.trim())
         .replaceAll("{{LINK_TEXT}}", text.trim())
     },
   );

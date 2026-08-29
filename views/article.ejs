@@ -24,8 +24,16 @@
         </div>
       </div>
       <div id="article-content" class="article_content">
-        <h2><%= articleTitle %></h2>
+        <h1 class="articleTitle"><%= articleTitle %></h1>
+        <br />
         <%- articleContent %>
+      </div>
+    </br>
+      <div class="articleFooterContainer">
+        <span class="articleFooter"
+          >This article is protected by our
+          <a href="/licenses">Content License</a>.</span
+        >
       </div>
     </div>
     <script src="/article.js"></script>

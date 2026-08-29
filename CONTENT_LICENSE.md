@@ -10,7 +10,7 @@ Any third-party material included on this website (e.g. public-domain images, qu
 
 - Permitted Use
 
-You may view, share, and quote brief excerpts of this content for non-commercial purposes, provided that:
+You may view, share, and quote this content for non-commercial purposes, provided that:
 
 you give clear, visible credit to Kxattof, and
 you include a link back to the original source where reasonably practical.

@@ -16,6 +16,7 @@ p {
   font-family: "Montserrat", sans-serif;
   font-weight: 350;
   font-style: normal;
+  font-size: 1.2em;
 }
 
 .article-image-box {
@@ -61,4 +62,36 @@ p {
   padding-right: 5%;
   width: 90%;
   gap: 20px;
+}
+
+.articleFooterContainer {
+  display: flex;
+  padding:30px;
+  padding-bottom: 20px;
+  justify-content: center;
+  border-top: 1px solid #472a23;
+}
+
+.articleFooter {
+  color: #472a23;
+}
+
+.articleFooter a {
+  color: #703d3a;
+}
+
+.articleTitle{
+  font-family: "Hepta Slab", serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  font-style: normal;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Hepta Slab", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-style: normal;
+  padding-top: 20px;
 }

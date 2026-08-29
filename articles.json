@@ -4,31 +4,18 @@
       {
         "id": 1,
         "title": "Kxattof Has Now Officially Launched",
-        "description": "A brief description of the article",
-        "image": "https://placehold.co/600x250/png",
+        "description": "A little bit about us. Enjoy the site!",
+        "image": "\\Assets\\Site_Launch_Thumb.png",
         "source": "SiteLaunch.md",
         "important": true
       },
       {
         "id": 2,
-        "title": "Another Article Title",
-        "description": "Another article description goes here",
-        "image": "https://placehold.co/600x350/png",
+        "title": "Job Thing Placeholder Title",
+        "description": "Job Thing Placeholder Description",
+        "image": "\\Assets\\JobThingPlaceholderThumb.png",
+        "source": "JobThingPlaceholder.md",
         "important": false
-      },
-      {
-        "id": 3,
-        "title": "Yet Another Article Title",
-        "description": "Yet another article description goes here",
-        "image": "https://placehold.co/600x700/png",
-        "important": false
-      },
-      {
-        "id": 4,
-        "title": "More Article Title",
-        "description": "More article description goes here",
-        "image": "https://placehold.co/600x400/png",
-        "important": true
       }
     ]
   }

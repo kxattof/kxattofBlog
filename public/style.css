@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
   color: blanchedalmond;
@@ -7,7 +7,8 @@ body {
   padding: 0;
 }
 
-.hepta, body {
+.hepta,
+body {
   font-family: "Hepta Slab", serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -28,12 +29,13 @@ header {
 
 .content {
   padding: 50px;
+  padding-bottom: 10px;
   padding-top: 10px;
   max-width: 70%;
   margin: 0 auto;
   background-color: #180500;
   border: 1px solid #472a23;
-  min-height: calc(100vh - 105px);
+  min-height: calc(100vh - 25px);
 }
 
 .menuBar {
@@ -45,7 +47,7 @@ header {
   border-right: none;
 }
 
-.menuContainer{
+.menuContainer {
   display: flex;
   justify-content: space-between;
   width: 75%;
@@ -61,10 +63,11 @@ header {
 
 .itemContainer {
   display: flex;
-  flex-direction: column;
   align-items: center;
   flex: 1;
   min-width: 0;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
 }
 
 .itemContainerContainer .itemContainer:first-child {
@@ -80,15 +83,15 @@ header {
   font-family: "Montserrat", sans-serif;
   font-weight: 350;
   border: 1px solid #ffeecc;
-  width:100%;
+  width: 100%;
 }
 
 .verticalSpacer {
- width: 25px;
+  width: 25px;
 }
 
 .article_content {
-  width:100%;
+  width: 100%;
   padding-top: 50px;
 }
 
@@ -106,7 +109,7 @@ h1 {
 }
 
 p a {
-    color: #f7b229;
+  color: #f7b229;
 }
 
 pre {
@@ -118,4 +121,3 @@ pre {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-
