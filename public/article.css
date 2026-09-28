@@ -6,7 +6,7 @@ body {
 }
 
 .article_content {
-  width:100%;
+  width: 100%;
   padding-top: 50px;
 }
 
@@ -20,17 +20,16 @@ p {
 }
 
 .article-image-box {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
-    margin-bottom: 20px;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 50px;
-    border-top: 1px solid #472a23;
-    border-bottom: 1px solid #472a23;
-    padding: 50px 0;
-
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 50px;
+  border-top: 1px solid #472a23;
+  border-bottom: 1px solid #472a23;
+  padding: 50px 0;
 }
 
 .article-image {
@@ -40,13 +39,13 @@ p {
 }
 
 .article-image-box[data-layout="row"] .article-image-container {
-      flex-grow: 2;
-      flex-basis: 0px;
-  }
+  flex-grow: 2;
+  flex-basis: 0px;
+}
 
 .article-image-box[data-layout="row"] .article-image-caption-container {
-    flex-grow: 1;
-    flex-basis: 0px;
+  flex-grow: 1;
+  flex-basis: 0px;
 }
 
 .article-image-box[data-layout="column"] .article-image-container,
@@ -66,10 +65,11 @@ p {
 
 .articleFooterContainer {
   display: flex;
-  padding:30px;
+  padding: 30px;
   padding-bottom: 20px;
-  justify-content: center;
   border-top: 1px solid #472a23;
+  flex-direction: column;
+  align-items: center;
 }
 
 .articleFooter {
@@ -80,7 +80,7 @@ p {
   color: #703d3a;
 }
 
-.articleTitle{
+.articleTitle {
   font-family: "Hepta Slab", serif;
   font-weight: 700;
   font-size: 2.5rem;
@@ -94,4 +94,26 @@ h2 {
   font-size: 1.5rem;
   font-style: normal;
   padding-top: 20px;
+}
+
+.pfpPicture {
+  width: 50px;
+  padding-right: 20px;
+}
+
+.authorContainer {
+  display: flex;
+  align-items: center;
+  font-size: 1.75rem;
+  color: #703d3a;
+  border-bottom: 1px solid #472a23;
+  padding-bottom: 20px;
+}
+
+.dates{
+  color: #472a23;
+      display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
 }

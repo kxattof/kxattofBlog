@@ -26,16 +26,25 @@
       <div id="article-content" class="article_content">
         <h1 class="articleTitle"><%= articleTitle %></h1>
         <br />
+        <div class="authorContainer">
+          <img src="/Assets/Profile_Picture2.png" class="pfpPicture">
+          <span><%- author %></span>
+        </div>
         <%- articleContent %>
       </div>
-    </br>
       <div class="articleFooterContainer">
+        <div class="dates">
+          <span class="published">Published: <%- published %></span>
+          <span class="edited">Last Edited: <%- edited %></span>
+        </div>
+        <div class="dates">
+          <span class="published">Written By: <%- author %></span>
+        </div>
         <span class="articleFooter"
           >This article is protected by our
           <a href="/licenses">Content License</a>.</span
         >
       </div>
     </div>
-    <script src="/article.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-Hey there! I'm Kxattof, and I created this website as a platform to pursue my passion for investigative journalism. As of now, I am the only one publishing on this site, but I hope to expand my team in the future.
+Hey there! I'm Kxattof, and I created this website as a platform to pursue my passion for investigative journalism. As of now, I am the only one publishing here, with the occasional guest writer but, I hope to expand my team in the future.
 
 ## About Me:
 

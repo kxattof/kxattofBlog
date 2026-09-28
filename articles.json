@@ -5,6 +5,9 @@
         "id": 1,
         "title": "Kxattof Has Now Officially Launched",
         "description": "A little bit about us. Enjoy the site!",
+        "author":"Kxattof",
+        "published":"9/28/2026",
+        "edited":"9/28/2026",
         "image": "\\Assets\\Site_Launch_Thumb.png",
         "source": "SiteLaunch.md",
         "important": true
@@ -13,6 +16,9 @@
         "id": 2,
         "title": "Job Thing Placeholder Title",
         "description": "Job Thing Placeholder Description",
+        "author":"Kxattof",
+        "published":"///",
+        "edited":"///",
         "image": "\\Assets\\JobThingPlaceholderThumb.png",
         "source": "JobThingPlaceholder.md",
         "important": false

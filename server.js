@@ -129,6 +129,9 @@ app.get("/article/:id", async (req, res) => {
       articleTitle: article.title,
       articleContent: renderMarkdown(content),
       articleId: id,
+      author: article.author,
+      published: article.published,
+      edited: article.edited,
     });
   } catch (err) {
     console.error(err);
