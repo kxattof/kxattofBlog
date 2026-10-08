@@ -3,21 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kxattof</title>
+    <title>Kxattof | Authors</title>
     <link rel="icon" type="image/x-icon" href="/Assets/Kxattof_Filled.png" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/home.css" />
+    <link rel="stylesheet" href="/authorList.css" />
   </head>
   <body>
     <div class="content">
       <header>
-        <h1 class="hepta"><a href="/">Kxattof</a></h1>
-        <p class="montserrat">Home</p>
+        <h1 class="hepta"><a href="/">Authors</a></h1>
+        <p class="montserrat">Authors on Kxattof</p>
       </header>
       <div class="menuBar">
-          <%- menuBar %>
+        <%- menuBar %>
+      </div>
+      <div class="authorMargins" id="authorMargins">
       </div>
     </div>
-    <script src="/home.js"></script>
+    <script>const articles = <%- JSON.stringify(articles) %></script>
+    <script src="\authorList.js"></script>
   </body>
 </html>

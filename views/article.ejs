@@ -15,20 +15,14 @@
         <p class="montserrat">Article ID #<%= articleId %></p>
       </header>
       <div class="menuBar">
-        <div class="menuContainer">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/licenses">Licenses</a>
-        </div>
+          <%- menuBar %>
       </div>
       <div id="article-content" class="article_content">
         <h1 class="articleTitle"><%= articleTitle %></h1>
         <br />
         <div class="authorContainer">
           <img src="/Assets/Profile_Picture2.png" class="pfpPicture">
-          <span><%- author %></span>
+          <a class="author" href="/author/<%- author %>"><%- author %></a>
         </div>
         <%- articleContent %>
       </div>

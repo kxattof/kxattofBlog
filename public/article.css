@@ -117,3 +117,8 @@ h2 {
     justify-content: space-evenly;
     padding-bottom: 10px;
 }
+
+.author {
+  color:#703d3a;
+  cursor: pointer;
+}

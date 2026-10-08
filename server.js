@@ -10,31 +10,37 @@ const PUBLIC_DIRECTORY = path.join(__dirname, "public");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.static(path.join(__dirname, "public"), { extensions: ["html", "htm"] }));
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    extensions: ["html", "htm"],
+  }),
+);
 
 const imageContainerHtml =
   "<div class='article-image-box' data-layout='{{ALIGNMENT}}' style='flex-direction: {{ALIGNMENT}};'> <div class='article-image-container'> <img src='{{IMAGE_SRC}}' alt='{{CAPTION}}' class='article-image'/> </div> <div class='article-image-caption-container'> <p class='article-image-caption'>{{CAPTION}}</p> </div> </div>";
 
-  const linkContainerHtml =
+const linkContainerHtml =
   "<a href='{{LINK_SOURCE}}' class='article-link'>{{LINK_TEXT}}</a>";
 
+const menuBar =
+  "<div class='menuContainer'> <a href='/'>Home</a> <a href='/about'>About</a> <a href='/contact'>Contact</a> <a href='/privacy'>Privacy Policy</a> <a href='/licenses'>Licenses</a> <a href='/author'>Authors</a> </div>";
+
 function htmlThings(value) {
-  return String(value).replace(
-    /<img>(.*?);;\s*(.*?);;\s*(.*?)<\/img>/g,
-    (match, src, caption, alignment) => {
-      return imageContainerHtml
-        .replace("{{IMAGE_SRC}}", src.trim())
-        .replaceAll("{{CAPTION}}", caption.trim())
-        .replaceAll("{{ALIGNMENT}}", alignment.trim());
-    },
-  ).replace(
-    /<a>(.*?);;\s*(.*?)<\/a>/g,
-    (match, src, text, alignment) => {
+  return String(value)
+    .replace(
+      /<img>(.*?);;\s*(.*?);;\s*(.*?)<\/img>/g,
+      (match, src, caption, alignment) => {
+        return imageContainerHtml
+          .replace("{{IMAGE_SRC}}", src.trim())
+          .replaceAll("{{CAPTION}}", caption.trim())
+          .replaceAll("{{ALIGNMENT}}", alignment.trim());
+      },
+    )
+    .replace(/<a>(.*?);;\s*(.*?)<\/a>/g, (match, src, text, alignment) => {
       return linkContainerHtml
         .replace("{{LINK_SOURCE}}", src.trim())
-        .replaceAll("{{LINK_TEXT}}", text.trim())
-    },
-  );
+        .replaceAll("{{LINK_TEXT}}", text.trim());
+    });
 }
 
 function renderMarkdown(markdown) {
@@ -103,7 +109,42 @@ async function loadArticles() {
 app.get(["/", "/home"], async (req, res) => {
   try {
     const data = await loadArticles();
-    res.render("home", {articles: data.blog.articles });
+    res.render("home", { articles: data.blog.articles, menuBar: menuBar });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Something went wrong");
+  }
+});
+
+app.get(["/author/:name"], async (req, res) => {
+  const name = String(req.params.name);
+  try {
+    const data = await loadArticles();
+    const nameArticles = data.blog.articles;
+    let names = [];
+    nameArticles.forEach((element) => {
+      names.push(element.author.toLowerCase());
+    });
+    if (names.includes(name.toLowerCase())) {
+      res.render("author", {
+        articles: nameArticles,
+        name: name,
+        menuBar: menuBar,
+      });
+    } else return res.status(404).render("404", { reason: "Author not found" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Something went wrong");
+  }
+});
+
+app.get(["/author"], async (req, res) => {
+  try {
+    const data = await loadArticles();
+    res.render("authorList", {
+      articles: data.blog.articles,
+      menuBar: menuBar,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).send("Something went wrong");
@@ -132,6 +173,29 @@ app.get("/article/:id", async (req, res) => {
       author: article.author,
       published: article.published,
       edited: article.edited,
+      menuBar: menuBar,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Something went wrong");
+  }
+});
+
+app.get(["/contact"], async (req, res) => {
+  try {
+    res.render("contact", {
+      menuBar: menuBar,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Something went wrong");
+  }
+});
+
+app.get(["/construction"], async (req, res) => {
+  try {
+    res.render("construction", {
+      menuBar: menuBar,
     });
   } catch (err) {
     console.error(err);
@@ -145,7 +209,8 @@ app.get("/about", async (req, res) => {
     const content = await fs.readFile(contentPath, "utf-8");
 
     return res.render("about", {
-      articleContent: (content),
+      articleContent: content,
+      menuBar: menuBar,
     });
   } catch (err) {
     console.error(err);
@@ -161,8 +226,9 @@ app.get("/licenses", async (req, res) => {
     const contentLicenseContent = await fs.readFile(contentLicense, "utf-8");
 
     return res.render("licenses", {
-      codeLicense: (codeLicenseContent),
-      contentLicense: (contentLicenseContent),
+      codeLicense: codeLicenseContent,
+      contentLicense: contentLicenseContent,
+      menuBar: menuBar,
     });
   } catch (err) {
     console.error(err);
@@ -176,7 +242,8 @@ app.get("/privacy", async (req, res) => {
     const privacyPolicyContent = await fs.readFile(privacyPolicy, "utf-8");
 
     return res.render("privacy", {
-      privacyPolicy: (privacyPolicyContent),
+      privacyPolicy: privacyPolicyContent,
+      menuBar: menuBar,
     });
   } catch (err) {
     console.error(err);
@@ -185,14 +252,17 @@ app.get("/privacy", async (req, res) => {
 });
 
 app.get("/.env", (req, res) => {
-  res.json({ message: "Nice try, lmfao" })
+  res.json({ message: "Nice try, lmfao" });
 });
 
 app.get("/server.js", (req, res) => {
   res.send("Nice try, lmfao");
 });
 
-app.use("/articles.json", express.static(path.join(__dirname, "articles.json")));
+app.use(
+  "/articles.json",
+  express.static(path.join(__dirname, "articles.json")),
+);
 
 app.use((req, res) => {
   return res.status(404).render("404", { reason: "Page not found" });

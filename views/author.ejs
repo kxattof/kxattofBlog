@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kxattof</title>
+    <title>Kxattof | <%= name %></title>
     <link rel="icon" type="image/x-icon" href="/Assets/Kxattof_Filled.png" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/home.css" />
@@ -12,12 +12,13 @@
     <div class="content">
       <header>
         <h1 class="hepta"><a href="/">Kxattof</a></h1>
-        <p class="montserrat">Home</p>
+        <p class="montserrat">All articles published by author: <%= name %></p>
       </header>
       <div class="menuBar">
           <%- menuBar %>
       </div>
     </div>
-    <script src="/home.js"></script>
+    <script>const name = <%- JSON.stringify(name) %></script>
+    <script src="\author.js"></script>
   </body>
 </html>

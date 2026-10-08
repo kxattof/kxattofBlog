@@ -1,0 +1,47 @@
+.authorMargins {
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.authorContainer {
+  flex: 1 1 0px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  padding-right: 15px;
+  font-size: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #070000;
+  border: 1px solid #ffeecc;
+  flex-wrap: wrap;
+  flex-direction: column;
+  &:hover {
+    background-color: #180500;
+    border: 1px solid #ccbb98;
+  }
+  &:active {
+    background-color: #070000;
+    border: 1px solid #ffeecc;
+  }
+}
+
+.nameCard {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.pfpPicture {
+  width: 75px;
+  padding-right: 20px;
+}
+
+.publishCount {
+    padding-top: 10px;
+  font-size: 1rem;
+  color: #703d3a;
+}
